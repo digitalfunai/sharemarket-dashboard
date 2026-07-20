@@ -1,1 +1,161 @@
-<!doctype html><html lang="en" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Finora professional Indian stock market platform"><title>IPO — Finora</title><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"><link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"><link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/responsive.css"></head><body><div class="page-loader"><div class="spinner-border text-success"></div></div><div class="sidebar-backdrop" data-sidebar-toggle></div><div class="app"><aside class="sidebar"><a class="brand" href="index.html"><span class="brand-mark"><i class="bi bi-graph-up-arrow"></i></span><span class="label">Finora</span></a><div class="side-nav"><div class="nav-section">Workspace</div><a class="side-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span class="label">Dashboard</span></a><a class="side-link" href="portfolio.html"><i class="bi bi-pie-chart"></i><span class="label">Portfolio</span></a><a class="side-link" href="markets.html"><i class="bi bi-bar-chart-line"></i><span class="label">Markets</span></a><a class="side-link" href="watchlist.html"><i class="bi bi-star"></i><span class="label">Watchlist</span></a><a class="side-link" href="orders.html"><i class="bi bi-arrow-left-right"></i><span class="label">Orders</span></a><a class="side-link" href="holdings.html"><i class="bi bi-briefcase"></i><span class="label">Holdings</span></a><div class="nav-section">Discover</div><a class="side-link active" href="ipo.html"><i class="bi bi-rocket-takeoff"></i><span class="label">IPO</span></a><a class="side-link" href="news.html"><i class="bi bi-newspaper"></i><span class="label">News</span></a><a class="side-link" href="economic-calendar.html"><i class="bi bi-calendar-event"></i><span class="label">Economic Calendar</span></a><a class="side-link" href="analytics.html"><i class="bi bi-activity"></i><span class="label">Analytics</span></a><a class="side-link" href="reports.html"><i class="bi bi-file-earmark-bar-graph"></i><span class="label">Reports</span></a><div class="nav-section">Account</div><a class="side-link" href="pricing.html"><i class="bi bi-gem"></i><span class="label">Pricing</span></a><a class="side-link" href="settings.html"><i class="bi bi-gear"></i><span class="label">Settings</span></a><a class="side-link" href="help.html"><i class="bi bi-question-circle"></i><span class="label">Help</span></a></div><div class="upgrade-card"><i class="bi bi-crown fs-4 text-warning"></i><h6 class="mt-2">Upgrade to Pro</h6><p class="small mb-3">Unlock AI analytics, alerts and professional investing tools.</p><a href="pricing.html" class="btn btn-primary-pro w-100">Upgrade Now</a></div><a class="side-link mt-2" href="#"><i class="bi bi-box-arrow-left"></i><span class="label">Logout</span></a></aside><main class="main"><nav class="topbar"><button class="icon-btn d-lg-none" data-sidebar-toggle aria-label="Open menu"><i class="bi bi-list"></i></button><button class="icon-btn d-none d-lg-grid" data-sidebar-toggle aria-label="Collapse menu"><i class="bi bi-layout-sidebar-inset"></i></button><div class="search-box global-search"><i class="bi bi-search"></i><input class="form-control" id="globalSearch" autocomplete="off" placeholder="Search company or symbol…" aria-label="Global search"><div class="search-results glass-card" id="searchResults"></div></div><div class="ms-auto d-flex gap-2 align-items-center"><button class="icon-btn" data-bs-toggle="dropdown" aria-label="Notifications"><i class="bi bi-bell"></i><span class="notification-dot"></span></button><div class="dropdown-menu dropdown-menu-end p-3 glass-card notification-menu"><strong>Notifications</strong><div class="notification-item mt-2"><span class="status-dot me-2"></span>RELIANCE crossed ₹3,000</div><div class="notification-item">TCS dividend credited</div></div><button class="icon-btn" data-theme-toggle aria-label="Toggle theme"><i data-theme-icon></i></button><div class="avatar">SD</div><div class="profile-meta"><div class="small fw-semibold heading">Mr. Das</div><div class="small">Investor</div></div></div></nav><section class="page-header fade-up"><div><div class="eyebrow">Primary markets</div><h1 class="page-title mt-2">IPO Dashboard</h1><p class="mb-0">Discover, evaluate and track public offerings.</p></div><div class="page-actions"><button class="btn btn-soft"><i class="bi bi-bookmark me-2"></i>My Applications</button><button class="btn btn-primary-pro"><i class="bi bi-calculator me-2"></i>IPO Calculator</button></div></section><section class="mb-4"><div class="section-kicker">Open IPOs</div><div class="row g-4" id="openIpos"></div></section><section class="row g-4 mb-4"><div class="col-xl-5"><article class="glass-card h-100"><div class="section-head"><div><div class="section-title">Upcoming IPOs</div><small>Expected launch pipeline</small></div></div><div class="card-body-pad"><div class="timeline" id="upcomingIpos"></div></div></article></div><div class="col-xl-7"><article class="glass-card h-100"><div class="section-head"><div><div class="section-title">IPO Performance</div><small>Listing gains across recent issues</small></div></div><div class="card-body-pad chart-wrap"><canvas id="ipoPerformanceChart"></canvas></div></article></div></section><section class="glass-card"><div class="section-head"><div><div class="section-title">Closed & Listed IPOs</div><small>Recent listing outcomes</small></div><input class="form-control form-control-sm premium-input" id="ipoSearch" placeholder="Search IPO"></div><div class="table-responsive card-body-pad pt-2"><table class="table table-premium"><thead><tr><th>Company</th><th>Issue Price</th><th>Listing Date</th><th>Listing Price</th><th>Listing Gain</th><th>Current Price</th><th>Status</th></tr></thead><tbody id="closedIpos"></tbody></table></div></section><footer class="footer d-flex justify-content-between flex-wrap"><span>© 2026 Finora. Demo market data.</span><div class="d-flex gap-3"><a href="pricing.html">Pricing</a><a href="help.html">Support</a></div></footer></main></div><button class="fab" data-scroll-top><i class="bi bi-arrow-up"></i></button><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script><script src="js/theme.js"></script><script src="js/sidebar.js"></script><script src="js/data.js"></script><script src="js/charts.js"></script><script src="js/app.js"></script><script src="js/ipo.js"></script></body></html>
+<!doctype html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="Finora professional Indian stock market platform">
+    <title>IPO — Finora</title>
+    <link rel="icon" href="assets/images/favicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <div class="page-loader">
+        <div class="spinner-border text-success"></div>
+    </div>
+    <div class="sidebar-backdrop" data-sidebar-toggle></div>
+    <div class="app">
+        <aside class="sidebar"><a class="brand" href="index.html"><span class="brand-mark"><i
+                        class="bi bi-graph-up-arrow"></i></span><span class="label">Finora</span></a>
+            <div class="side-nav">
+                <div class="nav-section">Workspace</div><a class="side-link" href="index.html"><i
+                        class="bi bi-grid-1x2-fill"></i><span class="label">Dashboard</span></a><a class="side-link"
+                    href="portfolio.html"><i class="bi bi-pie-chart"></i><span class="label">Portfolio</span></a><a
+                    class="side-link" href="markets.html"><i class="bi bi-bar-chart-line"></i><span
+                        class="label">Markets</span></a><a class="side-link" href="watchlist.html"><i
+                        class="bi bi-star"></i><span class="label">Watchlist</span></a><a class="side-link"
+                    href="orders.html"><i class="bi bi-arrow-left-right"></i><span class="label">Orders</span></a><a
+                    class="side-link" href="holdings.html"><i class="bi bi-briefcase"></i><span
+                        class="label">Holdings</span></a>
+                <div class="nav-section">Discover</div><a class="side-link active" href="ipo.html"><i
+                        class="bi bi-rocket-takeoff"></i><span class="label">IPO</span></a><a class="side-link"
+                    href="news.html"><i class="bi bi-newspaper"></i><span class="label">News</span></a><a
+                    class="side-link" href="economic-calendar.html"><i class="bi bi-calendar-event"></i><span
+                        class="label">Economic Calendar</span></a><a class="side-link" href="analytics.html"><i
+                        class="bi bi-activity"></i><span class="label">Analytics</span></a><a class="side-link"
+                    href="reports.html"><i class="bi bi-file-earmark-bar-graph"></i><span
+                        class="label">Reports</span></a>
+                <div class="nav-section">Account</div><a class="side-link" href="pricing.html"><i
+                        class="bi bi-gem"></i><span class="label">Pricing</span></a><a class="side-link"
+                    href="settings.html"><i class="bi bi-gear"></i><span class="label">Settings</span></a><a
+                    class="side-link" href="help.html"><i class="bi bi-question-circle"></i><span
+                        class="label">Help</span></a>
+            </div>
+            <div class="upgrade-card"><i class="bi bi-crown fs-4 text-warning"></i>
+                <h6 class="mt-2">Upgrade to Pro</h6>
+                <p class="small mb-3">Unlock AI analytics, alerts and professional investing tools.</p><a
+                    href="pricing.html" class="btn btn-primary-pro w-100">Upgrade Now</a>
+            </div><a class="side-link mt-2" href="#"><i class="bi bi-box-arrow-left"></i><span
+                    class="label">Logout</span></a>
+        </aside>
+        <main class="main">
+            <nav class="topbar"><button class="icon-btn d-lg-none" data-sidebar-toggle aria-label="Open menu"><i
+                        class="bi bi-list"></i></button><button class="icon-btn d-none d-lg-grid" data-sidebar-toggle
+                    aria-label="Collapse menu"><i class="bi bi-layout-sidebar-inset"></i></button>
+                <div class="search-box global-search"><i class="bi bi-search"></i><input class="form-control"
+                        id="globalSearch" autocomplete="off" placeholder="Search company or symbol…"
+                        aria-label="Global search">
+                    <div class="search-results glass-card" id="searchResults"></div>
+                </div>
+                <div class="ms-auto d-flex gap-2 align-items-center"><button class="icon-btn" data-bs-toggle="dropdown"
+                        aria-label="Notifications"><i class="bi bi-bell"></i><span
+                            class="notification-dot"></span></button>
+                    <div class="dropdown-menu dropdown-menu-end p-3 glass-card notification-menu">
+                        <strong>Notifications</strong>
+                        <div class="notification-item mt-2"><span class="status-dot me-2"></span>RELIANCE crossed ₹3,000
+                        </div>
+                        <div class="notification-item">TCS dividend credited</div>
+                    </div><button class="icon-btn" data-theme-toggle aria-label="Toggle theme"><i
+                            data-theme-icon></i></button>
+                    <div class="avatar">SD</div>
+                    <div class="profile-meta">
+                        <div class="small fw-semibold heading">Mr. Das</div>
+                        <div class="small">Investor</div>
+                    </div>
+                </div>
+            </nav>
+            <section class="page-header fade-up">
+                <div>
+                    <div class="eyebrow">Primary markets</div>
+                    <h1 class="page-title mt-2">IPO Dashboard</h1>
+                    <p class="mb-0">Discover, evaluate and track public offerings.</p>
+                </div>
+                <div class="page-actions"><button class="btn btn-soft"><i class="bi bi-bookmark me-2"></i>My
+                        Applications</button><button class="btn btn-primary-pro"><i
+                            class="bi bi-calculator me-2"></i>IPO Calculator</button></div>
+            </section>
+            <section class="mb-4">
+                <div class="section-kicker">Open IPOs</div>
+                <div class="row g-4" id="openIpos"></div>
+            </section>
+            <section class="row g-4 mb-4">
+                <div class="col-xl-5">
+                    <article class="glass-card h-100">
+                        <div class="section-head">
+                            <div>
+                                <div class="section-title">Upcoming IPOs</div><small>Expected launch pipeline</small>
+                            </div>
+                        </div>
+                        <div class="card-body-pad">
+                            <div class="timeline" id="upcomingIpos"></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-xl-7">
+                    <article class="glass-card h-100">
+                        <div class="section-head">
+                            <div>
+                                <div class="section-title">IPO Performance</div><small>Listing gains across recent
+                                    issues</small>
+                            </div>
+                        </div>
+                        <div class="card-body-pad chart-wrap"><canvas id="ipoPerformanceChart"></canvas></div>
+                    </article>
+                </div>
+            </section>
+            <section class="glass-card">
+                <div class="section-head">
+                    <div>
+                        <div class="section-title">Closed & Listed IPOs</div><small>Recent listing outcomes</small>
+                    </div><input class="form-control form-control-sm premium-input" id="ipoSearch"
+                        placeholder="Search IPO">
+                </div>
+                <div class="table-responsive card-body-pad pt-2">
+                    <table class="table table-premium">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Issue Price</th>
+                                <th>Listing Date</th>
+                                <th>Listing Price</th>
+                                <th>Listing Gain</th>
+                                <th>Current Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="closedIpos"></tbody>
+                    </table>
+                </div>
+            </section>
+            <footer class="footer d-flex justify-content-between flex-wrap"><span>© 2026 Finora. Demo market
+                    data.</span>
+                <div class="d-flex gap-3"><a href="pricing.html">Pricing</a><a href="help.html">Support</a></div>
+            </footer>
+        </main>
+    </div><button class="fab" data-scroll-top><i class="bi bi-arrow-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/sidebar.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/charts.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/ipo.js"></script>
+</body>
+
+</html>
