@@ -1,0 +1,22 @@
+@media(max-width:991.98px){.sidebar{transform:translateX(-100%);box-shadow:var(--shadow)}.sidebar.mobile-open{transform:none}.main{margin-left:0;width:100%;padding-inline:16px}.topbar{height:70px}.profile-meta{display:none}.chart-wrap{height:280px}}@media(max-width:575.98px){.topbar .search-box{display:none}.topbar{justify-content:space-between}.heatmap{grid-template-columns:repeat(2,1fr)}.stat-value{font-size:24px}.pricing-hero{padding-top:35px}.glass-card{border-radius:18px}.main{padding-bottom:80px}}
+
+@media(max-width:1199.98px){.market-index-grid,.global-grid{grid-template-columns:repeat(2,1fr)}.featured-news{grid-template-columns:1fr}.featured-news-image{min-height:260px}}@media(max-width:991.98px){.sidebar-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:1035}.sidebar-backdrop.show{display:block}.page-header{align-items:flex-start;flex-direction:column}.heatmap{grid-template-columns:repeat(3,1fr)}}@media(max-width:575.98px){.market-index-grid,.global-grid{grid-template-columns:1fr}.heatmap{grid-template-columns:repeat(2,1fr)}.featured-news-content{padding:24px}.chart-wrap-lg{height:320px}.page-actions{width:100%}.page-actions .btn{flex:1}.section-head{align-items:flex-start;flex-direction:column}.topbar .global-search{display:block;position:static}.topbar .global-search input{display:none}.topbar .global-search>i{position:static;width:42px;height:42px;display:grid;place-items:center;background:var(--card);border:1px solid var(--border);border-radius:13px}.search-results{position:fixed;top:70px;left:12px;right:12px}.topbar.search-open .global-search input{display:block;position:fixed;top:76px;left:12px;right:12px;width:calc(100% - 24px);z-index:2001}.topbar.search-open .search-results{top:132px}.ipo-grid{grid-template-columns:1fr}}@media(max-width:1199.98px){.market-overview-layout{grid-template-columns:1fr}.market-index-list{display:grid;grid-template-columns:repeat(2,1fr)}}
+@media(max-width:575.98px){.market-tabs-wrap{align-items:flex-start;flex-direction:column}.market-session{padding-left:4px}.market-overview-tabs{width:100%}.market-overview-tabs button{flex:1}.market-feature-top{flex-direction:column}.market-feature-meta{text-align:left!important}.market-index-list{grid-template-columns:1fr}.market-chart-footer{align-items:flex-start;flex-direction:column}.market-feature-chart{height:180px}}
+@media(max-width:1399.98px){.indian-indices-grid{grid-template-columns:repeat(3,1fr)}.market-bottom-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:1199.98px){.market-content-grid{grid-template-columns:1fr}.market-side-stack{grid-template-columns:repeat(3,1fr)}.index-detail-head{grid-template-columns:1fr 1.4fr 40px}}
+@media(max-width:991.98px){.indian-indices-grid{grid-template-columns:repeat(2,1fr)}.market-side-stack{grid-template-columns:1fr}.index-detail-head{grid-template-columns:1fr}.range-tabs{order:3}.chart-settings{position:absolute;right:20px}.markets-hero{align-items:flex-start}}
+@media(max-width:575.98px){.markets-hero{flex-direction:column}.indian-indices-grid,.market-bottom-grid{grid-template-columns:1fr}.index-detail-card{padding-inline:12px}.index-detail-value-row{align-items:flex-start;flex-direction:column;gap:3px}.range-tabs{overflow:auto}.range-tabs button{min-width:40px}.index-stat-strip{grid-template-columns:repeat(2,1fr)}.range-meter-wrap{grid-column:1/-1}.breadth-layout{grid-template-columns:1fr 72px 1fr}.breadth-flat{grid-column:1/-1;border-left:0;border-top:1px solid var(--border);padding-top:8px;margin-top:8px}.index-main-chart{height:220px}}
+
+@media(max-width:991.98px){
+  .sidebar{width:min(86vw,310px);height:100dvh;transform:translate3d(-105%,0,0);will-change:transform;visibility:hidden;transition:transform .3s cubic-bezier(.22,.8,.25,1),visibility .3s;padding-bottom:max(18px,env(safe-area-inset-bottom))}
+  .sidebar.mobile-open{transform:translate3d(0,0,0);visibility:visible}
+  .sidebar-backdrop{display:block;pointer-events:none}
+  body.sidebar-open .sidebar-backdrop{pointer-events:auto}
+  .side-nav{overscroll-behavior:contain}
+  .market-page-tabs{margin-inline:-4px;padding-inline:4px;padding-bottom:12px}
+  .market-placeholder-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:575.98px){
+  .market-placeholder-grid{grid-template-columns:1fr}
+  .market-page-tabs button{padding:9px 13px}
+}

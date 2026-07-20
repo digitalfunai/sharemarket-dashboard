@@ -1,0 +1,1 @@
+document.addEventListener('DOMContentLoaded',()=>{settingsForm.onsubmit=e=>{e.preventDefault();showToast('Settings saved successfully')}})
