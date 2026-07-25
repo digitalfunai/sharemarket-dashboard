@@ -648,10 +648,15 @@ a {
   overflow: auto
 }
 
-.search-results.show {
-  display: block
+.search-results.show,
+.dropdown-menu.show {
+  display: block;
+  background: #0a231c !important;
 }
-
+[data-theme="light"] .search-results.show,
+[data-theme="light"] .dropdown-menu.show {
+  background: #fefefe !important;
+}
 .search-result {
   display: flex;
   align-items: center;
@@ -1366,7 +1371,7 @@ a {
 }
 
 .logout-link {
-  color: var(--danger)
+  color: var(--danger) !important;
 }
 
 .markets-page {
@@ -2165,4 +2170,11 @@ body.sidebar-open .sidebar-backdrop {
   display: block;
   opacity: 1;
   visibility: visible
+}
+[data-theme="dark"] #portfolioHoldings .dropdown-item{
+  color: #fff;
+}
+#portfolioHoldings .dropdown-item:hover{
+  color: #1eb56f;
+  background: transparent;
 }

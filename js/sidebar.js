@@ -76,6 +76,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  const logoutBtn = document.getElementById('logoutBtn');
+  if (logoutBtn) {
+    logoutBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      auth.logout();
+    });
+  }
+
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && isMobile()) closeMobileSidebar();
   });

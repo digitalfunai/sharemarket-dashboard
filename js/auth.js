@@ -2,9 +2,9 @@ const auth = (() => {
     const STORAGE_KEY = 'finora_user_session';
     const USERS_KEY = 'finora_users';
     const DEMO_USER = {
-        email: 'admin@test.com',
-        password: 'admin123',
-        name: 'Admin User',
+        email: 'user@test.com',
+        password: 'user123',
+        name: 'Demo User',
         verified: true
     };
 
@@ -14,12 +14,18 @@ const auth = (() => {
     };
 
     const ensureDemoUserExists = () => {
-        const users = getAllUsers();
+        let users = getAllUsers();
+
+        // Remove old demo user (admin@test.com) if it exists
+        users = users.filter(u => u.email !== 'admin@test.com');
+
+        // Check if new demo user exists
         const demoExists = users.some(u => u.email === DEMO_USER.email);
         if (!demoExists) {
             users.push(DEMO_USER);
-            localStorage.setItem(USERS_KEY, JSON.stringify(users));
         }
+
+        localStorage.setItem(USERS_KEY, JSON.stringify(users));
     };
 
     const getAllUsers = () => {

@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" data-theme="dark">
 
 <head>
@@ -26,8 +26,59 @@
 
 <body>
     <div class="page-loader">
-        <div class="spinner-border text-success"></div>
+        <div class="stock-loader">
+            <div class="stock-candle"></div>
+            <div class="stock-candle"></div>
+            <div class="stock-candle"></div>
+            <div class="stock-candle"></div>
+            <div class="stock-candle"></div>
+        </div>
     </div>
+    <style>
+        .stock-loader {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 8px;
+            height: 80px;
+        }
+        .stock-candle {
+            width: 8px;
+            background: linear-gradient(180deg, #4caf50 0%, #45a049 100%);
+            border-radius: 2px;
+            animation: candleAnimate 2s ease-in-out infinite;
+        }
+        .stock-candle:nth-child(1) {
+            height: 30px;
+            animation-delay: 0s;
+        }
+        .stock-candle:nth-child(2) {
+            height: 50px;
+            animation-delay: 0.1s;
+        }
+        .stock-candle:nth-child(3) {
+            height: 70px;
+            animation-delay: 0.2s;
+        }
+        .stock-candle:nth-child(4) {
+            height: 40px;
+            animation-delay: 0.3s;
+        }
+        .stock-candle:nth-child(5) {
+            height: 60px;
+            animation-delay: 0.4s;
+        }
+        @keyframes candleAnimate {
+            0%, 100% {
+                opacity: 0.5;
+                transform: scaleY(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+    </style>
     <nav class="container topbar"><a class="brand p-0" href="index.html"><span class="brand-mark"><i
                     class="bi bi-graph-up-arrow"></i></span><span>Finora</span></a>
         <div class="ms-auto d-flex gap-2"><a href="index.html" class="btn btn-soft">Dashboard</a><button
@@ -37,7 +88,7 @@
         <section class="pricing-hero">
             <div class="eyebrow">Plans that scale with you</div>
             <h1 class="pricing-title mt-3">Choose the perfect plan for your investing journey</h1>
-            <p class="lead mx-auto mt-3" style="max-width:760px">Start free and upgrade anytime for AI-driven analytics,
+            <p class="lead mx-auto mt-3" id="billing_switch" style="max-width:760px">Start free and upgrade anytime for AI-driven analytics,
                 premium market tools, and professional investing insights.</p>
             <div class="billing-switch mt-4"><button class="active" data-billing="monthly">Monthly</button><button
                     data-billing="yearly">Yearly <span class="badge text-bg-success ms-1">Save 20%</span></button></div>
@@ -47,7 +98,7 @@
                 <article class="glass-card price-card">
                     <h3 class="section-title">Starter</h3>
                     <p>Essential tools to begin</p>
-                    <div class="price" data-monthly="₹0" data-yearly="₹0">₹0</div><small>forever</small>
+                    <div class="price" data-monthly="0" data-yearly="0">0</div><small>forever</small>
                     <ul class="feature-list">
                         <li><i class="bi bi-check-circle-fill"></i>Dashboard</li>
                         <li><i class="bi bi-check-circle-fill"></i>Watchlist</li>
@@ -62,7 +113,7 @@
                         Popular</span>
                     <h3 class="section-title">Pro</h3>
                     <p>Advanced investing intelligence</p>
-                    <div class="price" data-monthly="₹999" data-yearly="₹9,599">₹999</div><small
+                    <div class="price" data-monthly="999" data-yearly="9,599">999</div><small
                         data-monthly="per month" data-yearly="per year">per month</small>
                     <ul class="feature-list">
                         <li><i class="bi bi-check-circle-fill"></i>Unlimited watchlists</li>
@@ -78,7 +129,7 @@
                 <article class="glass-card price-card">
                     <h3 class="section-title">Premium</h3>
                     <p>Power tools for active investors</p>
-                    <div class="price" data-monthly="₹1,999" data-yearly="₹18,999">₹1,999</div><small
+                    <div class="price" data-monthly="1,999" data-yearly="18,999">1,999</div><small
                         data-monthly="per month" data-yearly="per year">per month</small>
                     <ul class="feature-list">
                         <li><i class="bi bi-check-circle-fill"></i>Everything in Pro</li>
@@ -141,10 +192,10 @@
             <div class="eyebrow">Level up your investing</div>
             <h2 class="page-title mt-2">Ready to unlock professional investing tools?</h2>
             <p>Join investors using smarter analytics and cleaner decision workflows.</p>
-            <div class="d-flex justify-content-center flex-wrap gap-2"><button class="btn btn-primary-pro px-4">Upgrade
-                    Now</button><button class="btn btn-soft px-4">Contact Sales</button></div>
+            <div class="d-flex justify-content-center flex-wrap gap-2"><a href="#billing_switch" class="btn btn-primary-pro px-4">Upgrade
+                    Now</a><button class="btn btn-soft px-4">Contact Sales</button></div>
         </section>
-        <footer class="footer d-flex justify-content-between flex-wrap"><span>© 2026 Finora.</span>
+        <footer class="footer d-flex justify-content-between flex-wrap"><span>© <script>document.write(new Date().getFullYear())</script> Finora. All Rights Reserved.</span></span>
             <div class="d-flex gap-3"><a href="index.html">Dashboard</a><a href="#">Privacy</a><a href="#">Terms</a>
             </div>
         </footer>
@@ -156,3 +207,6 @@
 </body>
 
 </html>
+
+
+

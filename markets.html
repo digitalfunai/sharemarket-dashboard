@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
@@ -29,22 +29,28 @@
 <div class="app">
   <aside class="sidebar">
     <a class="brand" href="index.html"><span class="brand-mark"><i class="bi bi-graph-up-arrow"></i></span><span class="label">Finora</span></a>
-    <div class="side-nav">
-      <div class="nav-section">Workspace</div>
-      <a class="side-link" href="index.html"><i class="bi bi-grid-1x2-fill"></i><span class="label">Dashboard</span></a>
-      <a class="side-link" href="portfolio.html"><i class="bi bi-pie-chart"></i><span class="label">Portfolio</span></a>
-      <a class="side-link active" href="markets.html"><i class="bi bi-bar-chart-line"></i><span class="label">Markets</span></a>
-      <a class="side-link" href="watchlist.html"><i class="bi bi-star"></i><span class="label">Watchlist</span></a>
-      <a class="side-link" href="orders.html"><i class="bi bi-arrow-left-right"></i><span class="label">Orders</span></a>
-      <a class="side-link" href="holdings.html"><i class="bi bi-briefcase"></i><span class="label">Holdings</span></a>
-      <div class="nav-section">Discover</div>
-      <a class="side-link" href="#"><i class="bi bi-currency-exchange"></i><span class="label">Mutual Funds</span></a>
-      <a class="side-link" href="ipo.html"><i class="bi bi-rocket-takeoff"></i><span class="label">IPO</span></a>
-      <a class="side-link" href="news.html"><i class="bi bi-newspaper"></i><span class="label">News</span></a>
-      <a class="side-link" href="economic-calendar.html"><i class="bi bi-calendar-event"></i><span class="label">Economic Calendar</span></a>
-      <a class="side-link" href="analytics.html"><i class="bi bi-activity"></i><span class="label">Analytics</span></a>
-      <a class="side-link" href="reports.html"><i class="bi bi-file-earmark-bar-graph"></i><span class="label">Reports</span></a>
-    </div>
+            <div class="side-nav">
+                <div class="nav-section">Workspace</div><a class="side-link" href="index.html"><i
+                        class="bi bi-grid-1x2-fill"></i><span class="label">Dashboard</span></a><a class="side-link"
+                    href="portfolio.html"><i class="bi bi-pie-chart"></i><span class="label">Portfolio</span></a><a
+                    class="side-link active" href="markets.html"><i class="bi bi-bar-chart-line"></i><span
+                        class="label">Markets</span></a><a class="side-link" href="watchlist.html"><i
+                        class="bi bi-star"></i><span class="label">Watchlist</span></a><a class="side-link"
+                    href="orders.html"><i class="bi bi-arrow-left-right"></i><span class="label">Orders</span></a><a
+                    class="side-link" href="holdings.html"><i class="bi bi-briefcase"></i><span
+                        class="label">Holdings</span></a>
+                <div class="nav-section">Discover</div><a class="side-link" href="ipo.html"><i
+                        class="bi bi-rocket-takeoff"></i><span class="label">IPO</span></a><a class="side-link"
+                    href="news.html"><i class="bi bi-newspaper"></i><span class="label">News</span></a><a class="side-link" href="analytics.html"><i
+                        class="bi bi-activity"></i><span class="label">Analytics</span></a><a class="side-link"
+                    href="reports.html"><i class="bi bi-file-earmark-bar-graph"></i><span
+                        class="label">Reports</span></a>
+                <div class="nav-section">Account</div><a class="side-link" href="pricing.html"><i
+                        class="bi bi-gem"></i><span class="label">Pricing</span></a><a class="side-link"
+                    href="settings.html"><i class="bi bi-gear"></i><span class="label">Settings</span></a><a
+                    class="side-link" href="help.html"><i class="bi bi-question-circle"></i><span
+                        class="label">Help</span></a>
+            </div>
     <div class="upgrade-card">
       <i class="bi bi-crown fs-4 text-warning"></i>
       <h6 class="mt-2">Upgrade to Pro</h6>
@@ -52,9 +58,11 @@
       <a href="pricing.html" class="btn btn-primary-pro w-100">Upgrade Now</a>
     </div>
     <div class="sidebar-footer-links">
-      <a class="side-link" href="settings.html"><i class="bi bi-gear"></i><span class="label">Settings</span></a>
-      <a class="side-link" href="help.html"><i class="bi bi-question-circle"></i><span class="label">Help &amp; Support</span></a>
-      <a class="side-link logout-link" href="#"><i class="bi bi-box-arrow-right"></i><span class="label">Logout</span></a>
+      
+      <!-- <a class="side-link logout-link" href="#"><i class="bi bi-box-arrow-right"></i><span class="label">Logout</span></a> -->
+       <button class="side-link mt-2 logout-link" id="logoutBtn"
+                style="background: none; border: none; padding: inherit; text-align: inherit; cursor: pointer; width: 100%; display: flex; align-items: center; gap: 0.75rem; font-size: inherit; color: inherit;"><i
+                    class="bi bi-box-arrow-left"></i><span class="label">Logout</span></button>
     </div>
   </aside>
 
@@ -63,13 +71,13 @@
       <button class="icon-btn d-lg-none" data-sidebar-toggle aria-label="Open menu"><i class="bi bi-list"></i></button>
       <button class="icon-btn d-none d-lg-grid" data-sidebar-toggle aria-label="Collapse menu"><i class="bi bi-layout-sidebar-inset"></i></button>
       <div class="search-box global-search">
-        <i class="bi bi-search"></i><input class="form-control" id="globalSearch" autocomplete="off" placeholder="Search company or symbol…" aria-label="Global search">
+        <i class="bi bi-search"></i><input class="form-control" id="globalSearch" autocomplete="off" placeholder="Search company or symbol" aria-label="Global search">
         <div class="search-results glass-card" id="searchResults"></div>
       </div>
       <div class="market-clock d-none d-xl-flex"><span class="status-dot"></span><div><strong>Market Open</strong><small id="marketClock">09:45:32 AM</small></div></div>
       <div class="ms-auto d-flex gap-2 align-items-center">
         <button class="icon-btn position-relative" data-bs-toggle="dropdown" aria-label="Notifications"><i class="bi bi-bell"></i><span class="topbar-count">3</span></button>
-        <div class="dropdown-menu dropdown-menu-end p-3 glass-card notification-menu"><strong>Notifications</strong><div class="notification-item mt-2"><span class="status-dot me-2"></span>RELIANCE crossed ₹3,000</div><div class="notification-item">TCS dividend credited</div></div>
+        <div class="dropdown-menu dropdown-menu-end p-3 glass-card notification-menu"><strong>Notifications</strong><div class="notification-item mt-2"><span class="status-dot me-2"></span>RELIANCE crossed 3,000</div><div class="notification-item">TCS dividend credited</div></div>
         <button class="icon-btn position-relative d-none" aria-label="Messages"><i class="bi bi-chat-left-text"></i><span class="topbar-count">5</span></button>
         <button class="icon-btn" data-theme-toggle aria-label="Toggle theme"><i data-theme-icon></i></button>
         <div class="avatar">SD</div><div class="profile-meta"><div class="small fw-semibold heading">Mr. Das</div><div class="small">Investor <span class="status-dot ms-1"></span></div></div>
@@ -120,7 +128,7 @@
           <div class="sentiment-layout"><div class="sentiment-gauge"><span>68</span><small>Bullish</small></div><div class="sentiment-legend"><span><i class="bull"></i>Bullish <b>68%</b></span><span><i class="neutral"></i>Neutral <b>22%</b></span><span><i class="bear"></i>Bearish <b>10%</b></span></div></div>
         </article>
         <article class="glass-card compact-market-widget fii-widget">
-          <div class="widget-heading">FII / DII Activity (₹ Cr)</div><small>As on 19 Jul, 2026</small><div class="fii-grid"><div><span>FII</span><strong class="trend-up">+1,265.35</strong></div><div><span>DII</span><strong class="trend-up">+2,342.18</strong></div></div>
+          <div class="widget-heading">FII / DII Activity ( Cr)</div><small>As on 19 Jul, 2026</small><div class="fii-grid"><div><span>FII</span><strong class="trend-up">+1,265.35</strong></div><div><span>DII</span><strong class="trend-up">+2,342.18</strong></div></div>
         </article>
       </aside>
     </section>
@@ -141,3 +149,7 @@
 <script src="js/theme.js"></script><script src="js/sidebar.js"></script><script src="js/data.js"></script><script src="js/charts.js"></script><script src="js/app.js"></script><script src="js/markets.js"></script>
 </body>
 </html>
+
+
+
+
